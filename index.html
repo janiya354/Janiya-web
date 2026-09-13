@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CYBERJANIYA OFFICIAL</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Poppins,sans-serif;
+    background:#020817;
+    color:#e8f7ff;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+    background:
+    linear-gradient(rgba(1,8,20,.86),rgba(1,8,20,.94)),
+    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=80")
+    center/cover;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    opacity:.18;
+    background-image:
+    linear-gradient(#00d9ff 1px,transparent 1px),
+    linear-gradient(90deg,#00d9ff 1px,transparent 1px);
+    background-size:55px 55px;
+    animation:gridMove 15s linear infinite;
+}
+
+@keyframes gridMove{
+    from{transform:translateY(0)}
+    to{transform:translateY(55px)}
+}
+
+/* GLOW ORBS */
+.orb{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.25;
+    z-index:-3;
+}
+
+.orb.one{
+    background:#0066ff;
+    top:10%;
+    left:-150px;
+}
+
+.orb.two{
+    background:#00ff95;
+    bottom:5%;
+    right:-150px;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:78px;
+    display:flex;
+    align-items:center;
+    padding:0 30px;
+    background:rgba(2,10,24,.88);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(0,200,255,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    min-width:250px;
+}
+
+.logo-box{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    font-family:Orbitron;
+    font-size:21px;
+    font-weight:800;
+    color:white;
+    background:linear-gradient(135deg,#00c6ff,#0066ff,#7a2cff);
+    box-shadow:0 0 25px #008cff;
+}
+
+.logo-text{
+    font-family:Orbitron;
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo-text span{
+    color:#00d9ff;
+}
+
+.logo-small{
+    display:block;
+    font-size:8px;
+    letter-spacing:5px;
+    color:#8296aa;
+    margin-top:3px;
+}
+
+nav{
+    display:flex;
+    gap:4px;
+    flex:1;
+}
+
+nav a{
+    color:#aebed0;
+    text-decoration:none;
+    padding:13px 13px;
+    font-size:12px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#fff;
+    background:rgba(0,157,255,.14);
+    box-shadow:inset 0 -2px #00d9ff;
+}
+
+.search{
+    width:190px;
+    height:38px;
+    border:1px solid #29465e;
+    border-radius:25px;
+    padding:0 15px;
+    background:#071525;
+    color:white;
+    outline:none;
+}
+
+.menu{
+    display:none;
+    font-size:30px;
+    cursor:pointer;
+}
+
+/* MAIN */
+main{
+    max-width:1450px;
+    margin:auto;
+    padding:25px;
+}
+
+/* HERO */
+.hero{
+    min-height:380px;
+    border:1px solid #1b4562;
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    padding:45px;
+    background:
+    linear-gradient(90deg,rgba(2,8,20,.97) 10%,rgba(2,8,20,.65) 48%,rgba(2,8,20,.25)),
+    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+    box-shadow:0 0 50px rgba(0,150,255,.12);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(120deg,transparent 30%,rgba(0,212,255,.08),transparent 70%);
+    animation:shine 5s infinite;
+}
+
+@keyframes shine{
+    0%{transform:translateX(-100%)}
+    50%,100%{transform:translateX(100%)}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:680px;
+}
+
+.tag{
+    display:inline-block;
+    padding:7px 14px;
+    border:1px solid #00cfff;
+    border-radius:30px;
+    color:#00e5ff;
+    font-size:11px;
+    margin-bottom:18px;
+    background:rgba(0,150,255,.08);
+}
+
+.hero h1{
+    font-family:Orbitron;
+    font-size:43px;
+    line-height:1.15;
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,#00d9ff,#7c4dff,#00ff9d);
+    -webkit-background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    font-size:20px;
+    color:#b67cff;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#b5c5d6;
+    font-size:14px;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 21px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    margin-right:8px;
+    transition:.3s;
+}
+
+.btn-primary{
+    color:white;
+    background:linear-gradient(90deg,#008cff,#743cff);
+    box-shadow:0 0 25px rgba(0,140,255,.3);
+}
+
+.btn-outline{
+    color:#00d9ff;
+    border:1px solid #087da7;
+    background:rgba(0,100,150,.08);
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+/* SECTION */
+.section{
+    margin-top:35px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:17px;
+}
+
+.section-title h2{
+    font-family:Orbitron;
+    font-size:20px;
+}
+
+.section-title h2 span{
+    color:#00d9ff;
+}
+
+.section-title a{
+    color:#00d9ff;
+    font-size:12px;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.card{
+    position:relative;
+    background:rgba(5,19,35,.86);
+    border:1px solid #173d59;
+    border-radius:13px;
+    overflow:hidden;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#00bfff;
+    box-shadow:0 15px 40px rgba(0,180,255,.14);
+}
+
+.card-img{
+    height:145px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.card-img::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 20%,rgba(2,10,20,.85));
+}
+
+.badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:2;
+    padding:5px 9px;
+    border-radius:8px;
+    font-size:9px;
+    background:#315cff;
+    color:white;
+}
+
+.card-body{
+    padding:14px;
+}
+
+.card h3{
+    font-size:14px;
+    margin-bottom:7px;
+}
+
+.card p{
+    font-size:11px;
+    color:#91a5b8;
+    line-height:1.6;
+    min-height:36px;
+}
+
+.price{
+    color:#00f5a0;
+    font-size:16px;
+    font-weight:700;
+    margin-top:10px;
+}
+
+.order{
+    display:block;
+    text-align:center;
+    margin-top:12px;
+    padding:9px;
+    border-radius:8px;
+    background:rgba(0,160,255,.1);
+    color:#00d9ff;
+    border:1px solid #155272;
+    text-decoration:none;
+    font-size:11px;
+}
+
+/* SERVICES IMAGES */
+.logo-service{
+    background-image:url("https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80");
+}
+
+.web-service{
+    background-image:url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80");
+}
+
+.app-service{
+    background-image:url("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80");
+}
+
+.poster-service{
+    background-image:url("https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?auto=format&fit=crop&w=900&q=80");
+}
+
+.video-service{
+    background-image:url("https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=900&q=80");
+}
+
+.ai-service{
+    background-image:url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80");
+}
+
+/* COURSES */
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.course{
+    min-height:235px;
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+    border:1px solid #21445d;
+    background-size:cover;
+    background-position:center;
+    transition:.35s;
+}
+
+.course:hover{
+    transform:scale(1.025);
+    box-shadow:0 0 35px rgba(0,210,255,.2);
+}
+
+.course::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent 15%,rgba(1,7,17,.95));
+}
+
+.course-content{
+    position:absolute;
+    bottom:0;
+    z-index:2;
+    padding:17px;
+}
+
+.course-content h3{
+    font-family:Orbitron;
+    font-size:14px;
+    margin-bottom:7px;
+}
+
+.course-content p{
+    font-size:10px;
+    color:#aebdca;
+    margin-bottom:8px;
+}
+
+.course-price{
+    color:#00ff9d;
+    font-weight:bold;
+}
+
+.darkweb{
+    background-image:url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80");
+}
+
+.webcourse{
+    background-image:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80");
+}
+
+.appcourse{
+    background-image:url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=80");
+}
+
+.aicourse{
+    background-image:url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80");
+}
+
+/* GEMINI */
+.gemini{
+    margin-top:35px;
+    border:1px solid #435cff;
+    border-radius:16px;
+    padding:25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+    background:
+    linear-gradient(90deg,rgba(35,25,90,.85),rgba(5,30,60,.9)),
+    url("https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+    box-shadow:0 0 45px rgba(100,50,255,.12);
+}
+
+.gemini h2{
+    font-family:Orbitron;
+    margin-bottom:8px;
+}
+
+.gemini p{
+    color:#b6c4d4;
+    font-size:12px;
+    line-height:1.7;
+}
+
+.gemini-price{
+    font-size:25px;
+    font-weight:bold;
+    color:#00ff9d;
+    white-space:nowrap;
+}
+
+/* WHY US */
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.feature{
+    text-align:center;
+    padding:25px 15px;
+    background:rgba(5,19,35,.8);
+    border:1px solid #173b55;
+    border-radius:13px;
+    transition:.3s;
+}
+
+.feature:hover{
+    border-color:#00d9ff;
+    transform:translateY(-5px);
+}
+
+.feature-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.feature h3{
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.feature p{
+    font-size:10px;
+    color:#8ea2b5;
+}
+
+/* FOOTER */
+footer{
+    margin-top:50px;
+    padding:35px 25px;
+    border-top:1px solid #173b55;
+    background:#020b18;
+}
+
+.footer-inner{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+}
+
+footer h2{
+    font-family:Orbitron;
+    font-size:17px;
+}
+
+footer p{
+    color:#8195a8;
+    font-size:11px;
+    margin-top:8px;
+}
+
+.socials a{
+    color:#00d9ff;
+    text-decoration:none;
+    margin-left:15px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:999;
+    background:#20e875;
+    color:#03130b;
+    padding:14px 21px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:12px;
+    box-shadow:0 0 30px rgba(32,232,117,.4);
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{box-shadow:0 0 15px rgba(32,232,117,.25)}
+    50%{box-shadow:0 0 35px rgba(32,232,117,.6)}
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+
+    header{
+        padding:0 18px;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:78px;
+        left:0;
+        right:0;
+        padding:15px;
+        flex-direction:column;
+        background:#030e1c;
+        border-bottom:1px solid #16405b;
+    }
+
+    nav.show{
+        display:flex;
+    }
+
+    nav a{
+        padding:14px;
+    }
+
+    .search{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+        margin-left:auto;
+    }
+
+    .logo{
+        min-width:auto;
+    }
+
+    main{
+        padding:15px;
+    }
+
+    .hero{
+        min-height:450px;
+        padding:30px 25px;
+        background-position:center;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero h2{
+        font-size:17px;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .course-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gemini{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    .logo-box{
+        width:42px;
+        height:42px;
+    }
+
+    .logo-text{
+        font-size:14px;
+    }
+
+    .hero{
+        min-height:470px;
+        padding:25px 20px;
+    }
+
+    .hero h1{
+        font-size:28px;
+    }
+
+    .hero p{
+        font-size:12px;
+    }
+
+    .grid,
+    .course-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .card-img{
+        height:120px;
+    }
+
+    .card-body{
+        padding:11px;
+    }
+
+    .card h3{
+        font-size:12px;
+    }
+
+    .card p{
+        font-size:9px;
+    }
+
+    .price{
+        font-size:14px;
+    }
+
+    .features{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gemini-price{
+        font-size:22px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+    }
+
+    .socials a{
+        margin-left:0;
+        margin-right:12px;
+    }
+
+    .whatsapp{
+        right:15px;
+        bottom:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="orb one"></div>
+<div class="orb two"></div>
+
+<header>
+
+    <div class="logo">
+        <div class="logo-box">CJ</div>
+
+        <div class="logo-text">
+            CYBER<span>JANIYA</span>
+            <small class="logo-small">OFFICIAL</small>
+        </div>
+    </div>
+
+    <nav id="nav">
+        <a href="#home" class="active">⌂ Home</a>
+        <a href="#services">🎨 Services</a>
+        <a href="#gemini">🤖 AI</a>
+        <a href="#courses">🎓 Courses</a>
+        <a href="#why">⭐ Why Us</a>
+        <a href="#contact">☎ Contact</a>
+    </nav>
+
+    <input class="search" placeholder="Search anything...">
+
+    <div class="menu" onclick="toggleMenu()">☰</div>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            ✦ CREATIVE DIGITAL STUDIO • SRI LANKA
+        </div>
+
+        <h1>
+            WELCOME TO<br>
+            <span>CYBERJANIYA</span>
+        </h1>
+
+        <h2>
+            Creative Digital Solutions
+        </h2>
+
+        <p>
+            Professional Logo Design, Website Design, App Design,
+            AI Services, Video Editing and practical digital courses —
+            everything you need to turn your ideas into reality.
+        </p>
+
+        <a href="#services" class="btn btn-primary">
+            Explore Services →
+        </a>
+
+        <a href="#courses" class="btn btn-outline">
+            Learn With Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="section" id="services">
+
+    <div class="section-title">
+        <h2>🎨 <span>Our</span> Services</h2>
+        <a href="#services">View All →</a>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-img logo-service">
+                <span class="badge">DESIGN</span>
+            </div>
+
+            <div class="card-body">
+                <h3>Logo Design</h3>
+                <p>
+                    Custom professional, gaming and business logos.
+                </p>
+
+                <div class="price">Rs. 400+</div>
+
+                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20a%20Logo%20Design">
+                    Order Now →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-img web-service">
+                <span class="badge">WEB</span>
+            </div>
+
+            <div class="card-body">
+                <h3>Website Design</h3>
+                <p>
+                    Modern responsive websites for brands and businesses.
+                </p>
+
+                <div class="price">Rs. 1,500+</div>
+
+                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20a%20Website">
+                    Order Now →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-img app-service">
+                <span class="badge">APP</span>
+            </div>
+
+            <div class="card-body">
+                <h3>App Design</h3>
+                <p>
+                    Modern mobile UI concepts, layouts and app screens.
+                </p>
+
+                <div class="price">Rs. 2,000+</div>
+
+                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20an%20App%20Design">
+                    Order Now →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-img poster-service">
+                <span class="badge">GRAPHICS</span>
+            </div>
+
+            <div class="card-body">
+                <h3>Poster / Banner</h3>
+                <p>
+                    Social media posters, banners and promotional graphics.
+                </p>
+
+                <div class="price">Rs. 500+</div>
+
+                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20a%20Poster%20or%20Banner">
+                    Order Now →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-img video-service">
+                <span class="badge">VIDEO</span>
+            </div>
+
+            <div class="card-body">
+                <h3>Video Editing</h3>
+                <p>
+                    Reels, TikTok, YouTube and promotional video editing.
+                </p>
+
+                <div class="price">Rs. 1,200+</div>
+
+                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20Video%20Editing">
+                    Order Now →
+                </a>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-img ai-service">
+                <span class="badge">AI</span>
+            </div>
+
+            <div class="card-body">
+                <h3>AI Services</h3>
+                <p>
+                    AI tools, AI content and digital productivity services.
+                </p>
+
+                <div class="price">Rs. 500+</div>
+
+                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20an%20AI%20Service">
+                    Order Now →
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GEMINI -->
+
+<section class="gemini" id="gemini">
+
+    <div>
+
+        <h2>🤖 Google Gemini Pro Access</h2>
+
+        <p>
+            Get access to Google Gemini Pro features with AI-powered
+            productivity, creative tools and cloud storage benefits.
+            Perfect for students, creators and digital users.
+        </p>
+
+    </div>
+
+    <div>
+        <div class="gemini-price">Rs. 1,200+</div>
+
+        <a class="btn btn-primary"
+           href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20Google%20Gemini%20Pro%20Access">
+           Get Access →
+        </a>
+    </div>
+
+</section>
+
+
+<!-- COURSES -->
+
+<section class="section" id="courses">
+
+    <div class="section-title">
+        <h2>🎓 <span>Learn</span> With Us</h2>
+        <a href="#courses">All Courses →</a>
+    </div>
+
+    <div class="course-grid">
+
+        <div class="course darkweb">
+
+            <div class="course-content">
+
+                <h3>🌑 Dark Web Course</h3>
+
+                <p>
+                    Learn the basics of the dark web,
+                    Tor, privacy and online safety.
+                </p>
+
+                <div class="course-price">
+                    Rs. 1,000+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="course webcourse">
+
+            <div class="course-content">
+
+                <h3>🌐 Web Design Course</h3>
+
+                <p>
+                    Learn HTML, CSS and JavaScript
+                    and create your own websites.
+                </p>
+
+                <div class="course-price">
+                    Rs. 1,500+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="course appcourse">
+
+            <div class="course-content">
+
+                <h3>📱 App Design Course</h3>
+
+                <p>
+                    Learn mobile UI design,
+                    layouts and app concepts.
+                </p>
+
+                <div class="course-price">
+                    Rs. 1,500+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="course aicourse">
+
+            <div class="course-content">
+
+                <h3>🤖 AI Course</h3>
+
+                <p>
+                    Learn practical AI tools,
+                    prompting and creative workflows.
+                </p>
+
+                <div class="course-price">
+                    Rs. 1,000+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="section" id="why">
+
+    <div class="section-title">
+        <h2>⚡ <span>Why</span> CyberJaniya?</h2>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <h3>Creative Designs</h3>
+            <p>Modern and professional designs.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Fast Delivery</h3>
+            <p>Quick communication and delivery.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💰</div>
+            <h3>Affordable Prices</h3>
+            <p>Services starting from affordable prices.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📱</div>
+            <h3>Mobile Friendly</h3>
+            <p>Everything designed for modern devices.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+
+    <div class="gemini">
+
+        <div>
+
+            <h2>🚀 Start Your Project</h2>
+
+            <p>
+                Need a logo, website, app design, poster,
+                video edit or AI service?
+                Contact CyberJaniya today.
+            </p>
+
+        </div>
+
+        <a class="btn btn-primary"
+           href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20want%20to%20start%20a%20project">
+           Contact Us →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            <h2>CYBERJANIYA OFFICIAL</h2>
+            <p>
+                Creative Digital Solutions • Sri Lanka
+            </p>
+            <p>
+                © 2026 CyberJaniya. All Rights Reserved.
+            </p>
+        </div>
+
+        <div class="socials">
+            <a href="#">YouTube</a>
+            <a href="#">WhatsApp</a>
+            <a href="#">Telegram</a>
+            <a href="#">Facebook</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<a class="whatsapp"
+   href="https://wa.me/94782539133?text=Hello%20CyberJaniya%20%F0%9F%91%8B">
+   💬 WhatsApp
+</a>
+
+
+<script>
+
+function toggleMenu(){
+
+    document.getElementById("nav")
+    .classList.toggle("show");
+
+}
+
+
+/* ACTIVE NAV */
+
+const links=document.querySelectorAll("nav a");
+
+links.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        links.forEach(x=>x.classList.remove("active"));
+
+        link.classList.add("active");
+
+        document.getElementById("nav")
+        .classList.remove("show");
+
+    });
+
+});
+
+
+/* SIMPLE SEARCH */
+
+document.querySelector(".search")
+.addEventListener("keyup",function(){
+
+    let value=this.value.toLowerCase();
+
+    document.querySelectorAll(".card,.course")
+    .forEach(card=>{
+
+        card.style.display=
+        card.innerText.toLowerCase().includes(value)
+        ? ""
+        : "none";
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
