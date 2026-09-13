@@ -2,1244 +2,1598 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CYBERJANIYA OFFICIAL</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CYBER JANIYA OFFICIAL</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-    font-family:Poppins,sans-serif;
-    background:#020817;
-    color:#e8f7ff;
-    overflow-x:hidden;
+  font-family:Inter,Arial,sans-serif;
+  background:#020914;
+  color:#eaf6ff;
+  overflow-x:hidden;
 }
 
 /* BACKGROUND */
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-5;
-    background:
-    linear-gradient(rgba(1,8,20,.86),rgba(1,8,20,.94)),
-    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=2000&q=80")
-    center/cover;
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+  radial-gradient(circle at 15% 20%,rgba(0,180,255,.16),transparent 30%),
+  radial-gradient(circle at 85% 70%,rgba(80,0,255,.14),transparent 30%),
+  linear-gradient(120deg,#020812,#041525,#020914);
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-4;
-    opacity:.18;
-    background-image:
-    linear-gradient(#00d9ff 1px,transparent 1px),
-    linear-gradient(90deg,#00d9ff 1px,transparent 1px);
-    background-size:55px 55px;
-    animation:gridMove 15s linear infinite;
-}
-
-@keyframes gridMove{
-    from{transform:translateY(0)}
-    to{transform:translateY(55px)}
-}
-
-/* GLOW ORBS */
-.orb{
-    position:fixed;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    filter:blur(100px);
-    opacity:.25;
-    z-index:-3;
-}
-
-.orb.one{
-    background:#0066ff;
-    top:10%;
-    left:-150px;
-}
-
-.orb.two{
-    background:#00ff95;
-    bottom:5%;
-    right:-150px;
+body:after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  opacity:.16;
+  background-image:
+  linear-gradient(rgba(0,190,255,.25) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(0,190,255,.25) 1px,transparent 1px);
+  background-size:45px 45px;
 }
 
 /* HEADER */
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    height:78px;
-    display:flex;
-    align-items:center;
-    padding:0 30px;
-    background:rgba(2,10,24,.88);
-    backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(0,200,255,.25);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  height:76px;
+  display:flex;
+  align-items:center;
+  padding:0 25px;
+  background:rgba(2,9,20,.9);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(0,180,255,.25);
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    min-width:250px;
+  font-family:Orbitron;
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#12cfff;
+  white-space:nowrap;
 }
 
-.logo-box{
-    width:48px;
-    height:48px;
-    border-radius:14px;
-    display:grid;
-    place-items:center;
-    font-family:Orbitron;
-    font-size:21px;
-    font-weight:800;
-    color:white;
-    background:linear-gradient(135deg,#00c6ff,#0066ff,#7a2cff);
-    box-shadow:0 0 25px #008cff;
-}
-
-.logo-text{
-    font-family:Orbitron;
-    font-size:19px;
-    font-weight:800;
-    letter-spacing:1px;
-}
-
-.logo-text span{
-    color:#00d9ff;
-}
-
-.logo-small{
-    display:block;
-    font-size:8px;
-    letter-spacing:5px;
-    color:#8296aa;
-    margin-top:3px;
-}
+.logo span{color:#735cff}
 
 nav{
-    display:flex;
-    gap:4px;
-    flex:1;
+  display:flex;
+  gap:8px;
+  margin-left:35px;
+  flex:1;
 }
 
-nav a{
-    color:#aebed0;
-    text-decoration:none;
-    padding:13px 13px;
-    font-size:12px;
-    border-radius:10px;
-    transition:.3s;
+nav button{
+  border:0;
+  background:transparent;
+  color:#a8bed0;
+  padding:12px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  transition:.3s;
 }
 
-nav a:hover,
-nav a.active{
-    color:#fff;
-    background:rgba(0,157,255,.14);
-    box-shadow:inset 0 -2px #00d9ff;
+nav button:hover,
+nav button.active{
+  color:#fff;
+  background:linear-gradient(135deg,#087cf7,#623dff);
+  box-shadow:0 0 20px rgba(0,150,255,.25);
 }
 
-.search{
-    width:190px;
-    height:38px;
-    border:1px solid #29465e;
-    border-radius:25px;
-    padding:0 15px;
-    background:#071525;
-    color:white;
-    outline:none;
+.join{
+  border:0;
+  padding:12px 20px;
+  border-radius:10px;
+  color:#fff;
+  background:linear-gradient(135deg,#087cf7,#743cff);
+  font-weight:700;
 }
 
+/* MOBILE */
 .menu{
-    display:none;
-    font-size:30px;
-    cursor:pointer;
+  display:none;
+  margin-left:auto;
+  font-size:28px;
+  cursor:pointer;
 }
 
-/* MAIN */
-main{
-    max-width:1450px;
-    margin:auto;
-    padding:25px;
+.mobile-nav{
+  display:none;
+  position:absolute;
+  top:76px;
+  left:0;
+  right:0;
+  padding:15px;
+  background:#03101d;
+  border-bottom:1px solid #123b55;
+}
+
+.mobile-nav button{
+  width:100%;
+  padding:14px;
+  margin-bottom:6px;
+  background:#071a2a;
+  color:#fff;
+  border:1px solid #12384f;
+  border-radius:10px;
+}
+
+/* LAYOUT */
+.layout{
+  display:grid;
+  grid-template-columns:220px 1fr 310px;
+  max-width:1550px;
+  margin:auto;
+  min-height:calc(100vh - 76px);
+}
+
+/* SIDEBAR */
+.sidebar{
+  padding:20px 12px;
+  border-right:1px solid rgba(0,170,255,.18);
+}
+
+.side-title{
+  color:#49cfff;
+  font-size:13px;
+  margin:8px 10px 12px;
+}
+
+.side-btn{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:12px;
+  margin:4px 0;
+  color:#a7bfd0;
+  background:transparent;
+  border:0;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.side-btn:hover{
+  background:#082238;
+  color:#fff;
+}
+
+.main{
+  padding:22px 18px;
 }
 
 /* HERO */
 .hero{
-    min-height:380px;
-    border:1px solid #1b4562;
-    border-radius:16px;
-    overflow:hidden;
-    position:relative;
-    display:flex;
-    align-items:center;
-    padding:45px;
-    background:
-    linear-gradient(90deg,rgba(2,8,20,.97) 10%,rgba(2,8,20,.65) 48%,rgba(2,8,20,.25)),
-    url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1800&q=85")
-    center/cover;
-    box-shadow:0 0 50px rgba(0,150,255,.12);
+  min-height:285px;
+  border:1px solid #174867;
+  border-radius:15px;
+  padding:38px;
+  position:relative;
+  overflow:hidden;
+  background:
+  linear-gradient(90deg,rgba(2,10,20,.95),rgba(2,10,20,.45)),
+  url("https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1600&q=80")
+  center/cover;
+  box-shadow:0 0 45px rgba(0,110,255,.08);
 }
 
-.hero::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg,transparent 30%,rgba(0,212,255,.08),transparent 70%);
-    animation:shine 5s infinite;
-}
-
-@keyframes shine{
-    0%{transform:translateX(-100%)}
-    50%,100%{transform:translateX(100%)}
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:680px;
-}
-
-.tag{
-    display:inline-block;
-    padding:7px 14px;
-    border:1px solid #00cfff;
-    border-radius:30px;
-    color:#00e5ff;
-    font-size:11px;
-    margin-bottom:18px;
-    background:rgba(0,150,255,.08);
+.hero h4{
+  color:#b8d8ff;
+  font-size:18px;
+  margin-bottom:5px;
 }
 
 .hero h1{
-    font-family:Orbitron;
-    font-size:43px;
-    line-height:1.15;
-    margin-bottom:12px;
-}
-
-.hero h1 span{
-    background:linear-gradient(90deg,#00d9ff,#7c4dff,#00ff9d);
-    -webkit-background-clip:text;
-    color:transparent;
+  font-family:Orbitron;
+  font-size:38px;
+  color:#19cfff;
+  margin:8px 0;
 }
 
 .hero h2{
-    font-size:20px;
-    color:#b67cff;
-    margin-bottom:15px;
+  color:#b785ff;
+  font-size:18px;
+  margin-bottom:15px;
 }
 
 .hero p{
-    color:#b5c5d6;
-    font-size:14px;
-    line-height:1.8;
-    margin-bottom:25px;
+  max-width:620px;
+  line-height:1.7;
+  color:#c1d0db;
 }
 
-.btn{
-    display:inline-block;
-    padding:13px 21px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    font-size:13px;
-    margin-right:8px;
-    transition:.3s;
-}
-
-.btn-primary{
-    color:white;
-    background:linear-gradient(90deg,#008cff,#743cff);
-    box-shadow:0 0 25px rgba(0,140,255,.3);
-}
-
-.btn-outline{
-    color:#00d9ff;
-    border:1px solid #087da7;
-    background:rgba(0,100,150,.08);
-}
-
-.btn:hover{
-    transform:translateY(-3px) scale(1.03);
+.hero button{
+  margin-top:20px;
+  padding:13px 20px;
+  border:0;
+  border-radius:10px;
+  color:#fff;
+  font-weight:700;
+  background:linear-gradient(135deg,#008dff,#743cff);
+  cursor:pointer;
 }
 
 /* SECTION */
-.section{
-    margin-top:35px;
-}
-
 .section-title{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:17px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:28px 0 15px;
 }
 
 .section-title h2{
-    font-family:Orbitron;
-    font-size:20px;
+  font-size:21px;
 }
 
-.section-title h2 span{
-    color:#00d9ff;
-}
-
-.section-title a{
-    color:#00d9ff;
-    font-size:12px;
+.section-title span{
+  color:#15cfff;
+  font-size:13px;
 }
 
 /* CARDS */
 .grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
 }
 
 .card{
-    position:relative;
-    background:rgba(5,19,35,.86);
-    border:1px solid #173d59;
-    border-radius:13px;
-    overflow:hidden;
-    transition:.35s;
+  border:1px solid #16425d;
+  border-radius:12px;
+  overflow:hidden;
+  background:#061421;
+  transition:.35s;
+  cursor:pointer;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#00bfff;
-    box-shadow:0 15px 40px rgba(0,180,255,.14);
+  transform:translateY(-5px);
+  border-color:#1bcfff;
+  box-shadow:0 15px 35px rgba(0,150,255,.12);
 }
 
-.card-img{
-    height:145px;
-    background-size:cover;
-    background-position:center;
-    position:relative;
-}
-
-.card-img::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(transparent 20%,rgba(2,10,20,.85));
-}
-
-.badge{
-    position:absolute;
-    top:10px;
-    left:10px;
-    z-index:2;
-    padding:5px 9px;
-    border-radius:8px;
-    font-size:9px;
-    background:#315cff;
-    color:white;
+.card img{
+  width:100%;
+  height:125px;
+  object-fit:cover;
 }
 
 .card-body{
-    padding:14px;
+  padding:14px;
+}
+
+.badge{
+  display:inline-block;
+  font-size:10px;
+  padding:5px 8px;
+  border-radius:20px;
+  background:#143b88;
+  color:#8bdcff;
+  margin-bottom:8px;
 }
 
 .card h3{
-    font-size:14px;
-    margin-bottom:7px;
+  font-size:15px;
+  margin-bottom:7px;
 }
 
 .card p{
-    font-size:11px;
-    color:#91a5b8;
-    line-height:1.6;
-    min-height:36px;
+  font-size:12px;
+  line-height:1.5;
+  color:#91a8b8;
 }
 
-.price{
-    color:#00f5a0;
-    font-size:16px;
-    font-weight:700;
-    margin-top:10px;
+.card-meta{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+  font-size:11px;
+  color:#68899e;
 }
 
-.order{
-    display:block;
-    text-align:center;
-    margin-top:12px;
-    padding:9px;
-    border-radius:8px;
-    background:rgba(0,160,255,.1);
-    color:#00d9ff;
-    border:1px solid #155272;
-    text-decoration:none;
-    font-size:11px;
-}
-
-/* SERVICES IMAGES */
-.logo-service{
-    background-image:url("https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=900&q=80");
-}
-
-.web-service{
-    background-image:url("https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80");
-}
-
-.app-service{
-    background-image:url("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80");
-}
-
-.poster-service{
-    background-image:url("https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?auto=format&fit=crop&w=900&q=80");
-}
-
-.video-service{
-    background-image:url("https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=900&q=80");
-}
-
-.ai-service{
-    background-image:url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80");
-}
-
-/* COURSES */
+/* COURSE */
 .course-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
 }
 
 .course{
-    min-height:235px;
-    border-radius:14px;
-    overflow:hidden;
-    position:relative;
-    border:1px solid #21445d;
-    background-size:cover;
-    background-position:center;
-    transition:.35s;
+  position:relative;
+  min-height:245px;
 }
 
-.course:hover{
-    transform:scale(1.025);
-    box-shadow:0 0 35px rgba(0,210,255,.2);
+.course img{
+  height:145px;
 }
 
-.course::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(transparent 15%,rgba(1,7,17,.95));
+.free{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:#00bd72;
+  color:#fff;
+  font-size:10px;
+  padding:6px 9px;
+  border-radius:20px;
+  font-weight:800;
 }
 
-.course-content{
-    position:absolute;
-    bottom:0;
-    z-index:2;
-    padding:17px;
+/* RIGHT */
+.rightbar{
+  padding:20px 14px;
+  border-left:1px solid rgba(0,170,255,.18);
 }
 
-.course-content h3{
-    font-family:Orbitron;
-    font-size:14px;
-    margin-bottom:7px;
+.panel{
+  background:#061421;
+  border:1px solid #16425d;
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:14px;
 }
 
-.course-content p{
-    font-size:10px;
-    color:#aebdca;
-    margin-bottom:8px;
+.profile{
+  display:flex;
+  gap:12px;
+  align-items:center;
 }
 
-.course-price{
-    color:#00ff9d;
-    font-weight:bold;
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  background:linear-gradient(135deg,#08cfff,#653cff);
 }
 
-.darkweb{
-    background-image:url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=80");
+.progress{
+  height:7px;
+  background:#102b3c;
+  border-radius:10px;
+  margin:14px 0 7px;
+  overflow:hidden;
 }
 
-.webcourse{
-    background-image:url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80");
+.progress div{
+  width:64%;
+  height:100%;
+  background:linear-gradient(90deg,#00cfff,#6847ff);
 }
 
-.appcourse{
-    background-image:url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=80");
+.stat{
+  display:flex;
+  justify-content:space-between;
+  margin-top:12px;
+  color:#8ba8ba;
+  font-size:12px;
 }
 
-.aicourse{
-    background-image:url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80");
+/* COURSE MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:3000;
+  background:rgba(0,0,0,.82);
+  backdrop-filter:blur(12px);
+  overflow:auto;
+  padding:25px;
 }
 
-/* GEMINI */
-.gemini{
-    margin-top:35px;
-    border:1px solid #435cff;
-    border-radius:16px;
-    padding:25px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
-    background:
-    linear-gradient(90deg,rgba(35,25,90,.85),rgba(5,30,60,.9)),
-    url("https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1400&q=80")
-    center/cover;
-    box-shadow:0 0 45px rgba(100,50,255,.12);
+.modal-box{
+  max-width:900px;
+  margin:20px auto;
+  background:#061321;
+  border:1px solid #1c5573;
+  border-radius:18px;
+  overflow:hidden;
 }
 
-.gemini h2{
-    font-family:Orbitron;
-    margin-bottom:8px;
+.modal-head{
+  position:relative;
+  min-height:230px;
+  padding:35px;
+  background-size:cover;
+  background-position:center;
 }
 
-.gemini p{
-    color:#b6c4d4;
-    font-size:12px;
-    line-height:1.7;
+.modal-head:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,#03101ddd,#03101d77);
 }
 
-.gemini-price{
-    font-size:25px;
-    font-weight:bold;
-    color:#00ff9d;
-    white-space:nowrap;
+.modal-head-content{
+  position:relative;
+  z-index:2;
 }
 
-/* WHY US */
-.features{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+.close{
+  position:absolute;
+  right:18px;
+  top:15px;
+  z-index:5;
+  border:0;
+  background:#0b2233;
+  color:#fff;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  font-size:20px;
+  cursor:pointer;
 }
 
-.feature{
-    text-align:center;
-    padding:25px 15px;
-    background:rgba(5,19,35,.8);
-    border:1px solid #173b55;
-    border-radius:13px;
-    transition:.3s;
+.modal-head h1{
+  font-family:Orbitron;
+  font-size:28px;
+  color:#1ed2ff;
+  margin:10px 0;
 }
 
-.feature:hover{
-    border-color:#00d9ff;
-    transform:translateY(-5px);
+.modal-content{
+  padding:25px;
 }
 
-.feature-icon{
-    font-size:30px;
-    margin-bottom:12px;
+.lesson-image{
+  width:100%;
+  max-height:330px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid #174660;
+  margin:15px 0 20px;
 }
 
-.feature h3{
-    font-size:13px;
-    margin-bottom:6px;
+.lesson-text{
+  color:#b8cbd7;
+  line-height:1.8;
 }
 
-.feature p{
-    font-size:10px;
-    color:#8ea2b5;
+.lesson-text h2{
+  color:#fff;
+  margin:20px 0 8px;
 }
 
-/* FOOTER */
-footer{
-    margin-top:50px;
-    padding:35px 25px;
-    border-top:1px solid #173b55;
-    background:#020b18;
+.lesson-text h3{
+  color:#17cfff;
+  margin:18px 0 7px;
 }
 
-.footer-inner{
-    max-width:1400px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    gap:20px;
+.lesson-text ul{
+  padding-left:22px;
+  margin:10px 0;
 }
 
-footer h2{
-    font-family:Orbitron;
-    font-size:17px;
+.code{
+  margin:15px 0;
+  padding:16px;
+  background:#02070c;
+  border:1px solid #153c50;
+  border-radius:10px;
+  overflow:auto;
+  color:#63e7ff;
+  font-family:monospace;
 }
 
-footer p{
-    color:#8195a8;
-    font-size:11px;
-    margin-top:8px;
+.lesson-actions{
+  display:flex;
+  gap:10px;
+  margin-top:25px;
 }
 
-.socials a{
-    color:#00d9ff;
-    text-decoration:none;
-    margin-left:15px;
+.lesson-actions button{
+  flex:1;
+  padding:13px;
+  border-radius:10px;
+  border:1px solid #1a5877;
+  background:#092034;
+  color:#fff;
+  cursor:pointer;
+}
+
+.lesson-actions .next{
+  background:linear-gradient(135deg,#008cff,#703cff);
+  border:0;
 }
 
 /* WHATSAPP */
 .whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    z-index:999;
-    background:#20e875;
-    color:#03130b;
-    padding:14px 21px;
-    border-radius:40px;
-    text-decoration:none;
-    font-weight:700;
-    font-size:12px;
-    box-shadow:0 0 30px rgba(32,232,117,.4);
-    animation:pulse 2s infinite;
+  position:fixed;
+  right:22px;
+  bottom:20px;
+  z-index:1500;
+  padding:14px 22px;
+  border-radius:30px;
+  background:#19d879;
+  color:#001b0d;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 0 30px rgba(0,255,130,.25);
 }
 
-@keyframes pulse{
-    0%,100%{box-shadow:0 0 15px rgba(32,232,117,.25)}
-    50%{box-shadow:0 0 35px rgba(32,232,117,.6)}
+/* FOOTER */
+footer{
+  border-top:1px solid #153b52;
+  padding:30px;
+  text-align:center;
+  color:#68879a;
 }
 
-/* MOBILE */
-@media(max-width:1000px){
-
-    header{
-        padding:0 18px;
-    }
-
-    nav{
-        display:none;
-        position:absolute;
-        top:78px;
-        left:0;
-        right:0;
-        padding:15px;
-        flex-direction:column;
-        background:#030e1c;
-        border-bottom:1px solid #16405b;
-    }
-
-    nav.show{
-        display:flex;
-    }
-
-    nav a{
-        padding:14px;
-    }
-
-    .search{
-        display:none;
-    }
-
-    .menu{
-        display:block;
-        margin-left:auto;
-    }
-
-    .logo{
-        min-width:auto;
-    }
-
-    main{
-        padding:15px;
-    }
-
-    .hero{
-        min-height:450px;
-        padding:30px 25px;
-        background-position:center;
-    }
-
-    .hero h1{
-        font-size:31px;
-    }
-
-    .hero h2{
-        font-size:17px;
-    }
-
-    .grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .course-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .features{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .gemini{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .layout{grid-template-columns:190px 1fr}
+  .rightbar{display:none}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .course-grid{grid-template-columns:repeat(2,1fr)}
 }
 
-@media(max-width:600px){
+@media(max-width:720px){
+  header{height:68px;padding:0 16px}
+  nav,.join{display:none}
+  .menu{display:block}
+  .mobile-nav{top:68px}
 
-    .logo-box{
-        width:42px;
-        height:42px;
-    }
+  .layout{
+    display:block;
+  }
 
-    .logo-text{
-        font-size:14px;
-    }
+  .sidebar{display:none}
+  .main{padding:15px 12px}
 
-    .hero{
-        min-height:470px;
-        padding:25px 20px;
-    }
+  .hero{
+    min-height:390px;
+    padding:28px 20px;
+  }
 
-    .hero h1{
-        font-size:28px;
-    }
+  .hero h1{
+    font-size:28px;
+  }
 
-    .hero p{
-        font-size:12px;
-    }
+  .hero p{
+    font-size:13px;
+  }
 
-    .grid,
-    .course-grid{
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-    }
+  .grid,
+  .course-grid{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
 
-    .card-img{
-        height:120px;
-    }
+  .card img{height:105px}
 
-    .card-body{
-        padding:11px;
-    }
+  .card-body{padding:11px}
 
-    .card h3{
-        font-size:12px;
-    }
+  .card h3{font-size:13px}
 
-    .card p{
-        font-size:9px;
-    }
+  .course{
+    min-height:225px;
+  }
 
-    .price{
-        font-size:14px;
-    }
+  .modal{
+    padding:8px;
+  }
 
-    .features{
-        grid-template-columns:1fr 1fr;
-    }
+  .modal-box{
+    margin:5px auto;
+  }
 
-    .gemini-price{
-        font-size:22px;
-    }
+  .modal-head{
+    min-height:200px;
+    padding:25px 18px;
+  }
 
-    .footer-inner{
-        flex-direction:column;
-    }
+  .modal-head h1{
+    font-size:23px;
+  }
 
-    .socials a{
-        margin-left:0;
-        margin-right:12px;
-    }
-
-    .whatsapp{
-        right:15px;
-        bottom:15px;
-    }
+  .whatsapp{
+    right:14px;
+    bottom:14px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="orb one"></div>
-<div class="orb two"></div>
-
 <header>
+  <div class="logo">CYBER<span>JANIYA</span></div>
 
-    <div class="logo">
-        <div class="logo-box">CJ</div>
+  <nav>
+    <button class="active">⌂ Home</button>
+    <button>▣ News</button>
+    <button>◉ AI & Tech</button>
+    <button>⌘ Coding</button>
+    <button>⚒ Tools</button>
+    <button>🎮 Games</button>
+    <button>☄ Mystery</button>
+    <button>⚗ Science</button>
+    <button>♟ Android</button>
+    <button>⚡ Challenges</button>
+  </nav>
 
-        <div class="logo-text">
-            CYBER<span>JANIYA</span>
-            <small class="logo-small">OFFICIAL</small>
-        </div>
-    </div>
-
-    <nav id="nav">
-        <a href="#home" class="active">⌂ Home</a>
-        <a href="#services">🎨 Services</a>
-        <a href="#gemini">🤖 AI</a>
-        <a href="#courses">🎓 Courses</a>
-        <a href="#why">⭐ Why Us</a>
-        <a href="#contact">☎ Contact</a>
-    </nav>
-
-    <input class="search" placeholder="Search anything...">
-
-    <div class="menu" onclick="toggleMenu()">☰</div>
-
+  <button class="join">Join</button>
+  <div class="menu" onclick="toggleMenu()">☰</div>
 </header>
 
+<div class="mobile-nav" id="mobileNav">
+  <button>⌂ Home</button>
+  <button>▣ News</button>
+  <button>◉ AI & Tech</button>
+  <button>⌘ Coding</button>
+  <button>⚒ Tools</button>
+  <button>🎓 Free Courses</button>
+  <button>🛡 Cyber Safety</button>
+</div>
 
-<main>
+<div class="layout">
 
-<!-- HERO -->
+<aside class="sidebar">
 
-<section class="hero" id="home">
+  <div class="side-title">EXPLORE</div>
 
-    <div class="hero-content">
+  <button class="side-btn">⌂ Home</button>
+  <button class="side-btn">🔥 Daily Discovery</button>
+  <button class="side-btn">💡 Mind Blowing Facts</button>
+  <button class="side-btn">☄ Mystery Files</button>
+  <button class="side-btn">⚗ Science</button>
+  <button class="side-btn">🤖 AI Playground</button>
+  <button class="side-btn">⌘ Coding Lab</button>
+  <button class="side-btn">🎮 Mini Games</button>
+  <button class="side-btn">⚡ Daily Challenge</button>
+  <button class="side-btn">🛠 Free Tools</button>
+  <button class="side-btn">📱 Android Zone</button>
+  <button class="side-btn">🛡 Cyber Safety</button>
 
-        <div class="tag">
-            ✦ CREATIVE DIGITAL STUDIO • SRI LANKA
-        </div>
+  <div class="side-title">LEARNING</div>
 
-        <h1>
-            WELCOME TO<br>
-            <span>CYBERJANIYA</span>
-        </h1>
+  <button class="side-btn" onclick="openCourse(0)">🌐 Web Design</button>
+  <button class="side-btn" onclick="openCourse(1)">📱 App Design</button>
+  <button class="side-btn" onclick="openCourse(2)">🕶 Dark Web</button>
+  <button class="side-btn" onclick="openCourse(3)">💻 Coding</button>
+  <button class="side-btn" onclick="openCourse(4)">🤖 AI</button>
+  <button class="side-btn" onclick="openCourse(5)">🛡 Cyber Safety</button>
 
-        <h2>
-            Creative Digital Solutions
-        </h2>
+</aside>
 
-        <p>
-            Professional Logo Design, Website Design, App Design,
-            AI Services, Video Editing and practical digital courses —
-            everything you need to turn your ideas into reality.
-        </p>
+<main class="main">
 
-        <a href="#services" class="btn btn-primary">
-            Explore Services →
-        </a>
+<section class="hero">
 
-        <a href="#courses" class="btn btn-outline">
-            Learn With Us
-        </a>
+  <h4>Welcome to</h4>
 
-    </div>
+  <h1>CYBERJANIYA OFFICIAL</h1>
 
-</section>
+  <h2>Explore • Learn • Create</h2>
 
+  <p>
+    Discover modern technology, AI, coding, design, science,
+    mystery and practical digital skills — all in one place.
+    Learn for FREE with visual lessons and practical examples.
+  </p>
 
-<!-- SERVICES -->
-
-<section class="section" id="services">
-
-    <div class="section-title">
-        <h2>🎨 <span>Our</span> Services</h2>
-        <a href="#services">View All →</a>
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <div class="card-img logo-service">
-                <span class="badge">DESIGN</span>
-            </div>
-
-            <div class="card-body">
-                <h3>Logo Design</h3>
-                <p>
-                    Custom professional, gaming and business logos.
-                </p>
-
-                <div class="price">Rs. 400+</div>
-
-                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20a%20Logo%20Design">
-                    Order Now →
-                </a>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-img web-service">
-                <span class="badge">WEB</span>
-            </div>
-
-            <div class="card-body">
-                <h3>Website Design</h3>
-                <p>
-                    Modern responsive websites for brands and businesses.
-                </p>
-
-                <div class="price">Rs. 1,500+</div>
-
-                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20a%20Website">
-                    Order Now →
-                </a>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-img app-service">
-                <span class="badge">APP</span>
-            </div>
-
-            <div class="card-body">
-                <h3>App Design</h3>
-                <p>
-                    Modern mobile UI concepts, layouts and app screens.
-                </p>
-
-                <div class="price">Rs. 2,000+</div>
-
-                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20an%20App%20Design">
-                    Order Now →
-                </a>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-img poster-service">
-                <span class="badge">GRAPHICS</span>
-            </div>
-
-            <div class="card-body">
-                <h3>Poster / Banner</h3>
-                <p>
-                    Social media posters, banners and promotional graphics.
-                </p>
-
-                <div class="price">Rs. 500+</div>
-
-                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20a%20Poster%20or%20Banner">
-                    Order Now →
-                </a>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-img video-service">
-                <span class="badge">VIDEO</span>
-            </div>
-
-            <div class="card-body">
-                <h3>Video Editing</h3>
-                <p>
-                    Reels, TikTok, YouTube and promotional video editing.
-                </p>
-
-                <div class="price">Rs. 1,200+</div>
-
-                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20Video%20Editing">
-                    Order Now →
-                </a>
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="card-img ai-service">
-                <span class="badge">AI</span>
-            </div>
-
-            <div class="card-body">
-                <h3>AI Services</h3>
-                <p>
-                    AI tools, AI content and digital productivity services.
-                </p>
-
-                <div class="price">Rs. 500+</div>
-
-                <a class="order" href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20an%20AI%20Service">
-                    Order Now →
-                </a>
-            </div>
-        </div>
-
-    </div>
+  <button onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+    Explore Free Courses →
+  </button>
 
 </section>
 
+<div class="section-title">
+  <h2>📰 Latest Articles</h2>
+  <span>View All →</span>
+</div>
 
-<!-- GEMINI -->
+<section class="grid">
 
-<section class="gemini" id="gemini">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80">
+<div class="card-body">
+<span class="badge">AI</span>
+<h3>AI & Technology</h3>
+<p>Learn about modern artificial intelligence and useful AI tools.</p>
+<div class="card-meta"><span>AI</span><span>2.4K views</span></div>
+</div>
+</div>
 
-    <div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80">
+<div class="card-body">
+<span class="badge">Coding</span>
+<h3>Start Coding</h3>
+<p>Begin your coding journey from the basics.</p>
+<div class="card-meta"><span>Code</span><span>1.8K views</span></div>
+</div>
+</div>
 
-        <h2>🤖 Google Gemini Pro Access</h2>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80">
+<div class="card-body">
+<span class="badge">Mystery</span>
+<h3>Unsolved Mysteries</h3>
+<p>Explore strange events and unexplained stories.</p>
+<div class="card-meta"><span>Mystery</span><span>1.5K views</span></div>
+</div>
+</div>
 
-        <p>
-            Get access to Google Gemini Pro features with AI-powered
-            productivity, creative tools and cloud storage benefits.
-            Perfect for students, creators and digital users.
-        </p>
-
-    </div>
-
-    <div>
-        <div class="gemini-price">Rs. 1,200+</div>
-
-        <a class="btn btn-primary"
-           href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20need%20Google%20Gemini%20Pro%20Access">
-           Get Access →
-        </a>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80">
+<div class="card-body">
+<span class="badge">Science</span>
+<h3>Science Experiments</h3>
+<p>Interesting science explained simply.</p>
+<div class="card-meta"><span>Science</span><span>1.2K views</span></div>
+</div>
+</div>
 
 </section>
 
 
 <!-- COURSES -->
 
-<section class="section" id="courses">
+<section id="courses">
 
-    <div class="section-title">
-        <h2>🎓 <span>Learn</span> With Us</h2>
-        <a href="#courses">All Courses →</a>
-    </div>
+<div class="section-title">
+<h2>🎓 FREE DIGITAL COURSES</h2>
+<span>100% FREE • Learn at your own pace</span>
+</div>
 
-    <div class="course-grid">
+<div class="course-grid">
 
-        <div class="course darkweb">
+<!-- WEB -->
+<div class="card course" onclick="openCourse(0)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">WEB DESIGN</span>
+<h3>🌐 Web Design A–Z</h3>
+<p>HTML, CSS, JavaScript and responsive websites.</p>
+<div class="card-meta"><span>12 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-            <div class="course-content">
+<!-- APP -->
+<div class="card course" onclick="openCourse(1)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">APP DESIGN</span>
+<h3>📱 App Design</h3>
+<p>Learn UI/UX, mobile screens and app layouts.</p>
+<div class="card-meta"><span>10 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-                <h3>🌑 Dark Web Course</h3>
+<!-- DARK WEB -->
+<div class="card course" onclick="openCourse(2)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">CYBER</span>
+<h3>🕶 Dark Web Basics</h3>
+<p>Understand the dark web, privacy concepts and safety.</p>
+<div class="card-meta"><span>9 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-                <p>
-                    Learn the basics of the dark web,
-                    Tor, privacy and online safety.
-                </p>
+<!-- CODING -->
+<div class="card course" onclick="openCourse(3)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">CODING</span>
+<h3>💻 Coding Basics</h3>
+<p>Start programming with practical beginner lessons.</p>
+<div class="card-meta"><span>15 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-                <div class="course-price">
-                    Rs. 1,000+
-                </div>
+<!-- AI -->
+<div class="card course" onclick="openCourse(4)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">ARTIFICIAL INTELLIGENCE</span>
+<h3>🤖 AI Master Basics</h3>
+<p>AI concepts, prompting and practical AI workflows.</p>
+<div class="card-meta"><span>11 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-            </div>
+<!-- CYBER SAFETY -->
+<div class="card course" onclick="openCourse(5)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">SECURITY</span>
+<h3>🛡 Cyber Safety</h3>
+<p>Protect accounts, devices and personal information.</p>
+<div class="card-meta"><span>10 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-        </div>
+<!-- GRAPHIC -->
+<div class="card course" onclick="openCourse(6)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">DESIGN</span>
+<h3>🎨 Logo & Graphic Design</h3>
+<p>Learn colors, typography, layouts and logo concepts.</p>
+<div class="card-meta"><span>10 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
+<!-- PHONE WEB -->
+<div class="card course" onclick="openCourse(7)">
+<div class="free">FREE</div>
+<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=900&q=80">
+<div class="card-body">
+<span class="badge">PHONE BUILDING</span>
+<h3>📲 Build Websites From Phone</h3>
+<p>HTML, GitHub and GitHub Pages from your phone.</p>
+<div class="card-meta"><span>8 Lessons</span><span>Beginner</span></div>
+</div>
+</div>
 
-        <div class="course webcourse">
-
-            <div class="course-content">
-
-                <h3>🌐 Web Design Course</h3>
-
-                <p>
-                    Learn HTML, CSS and JavaScript
-                    and create your own websites.
-                </p>
-
-                <div class="course-price">
-                    Rs. 1,500+
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="course appcourse">
-
-            <div class="course-content">
-
-                <h3>📱 App Design Course</h3>
-
-                <p>
-                    Learn mobile UI design,
-                    layouts and app concepts.
-                </p>
-
-                <div class="course-price">
-                    Rs. 1,500+
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="course aicourse">
-
-            <div class="course-content">
-
-                <h3>🤖 AI Course</h3>
-
-                <p>
-                    Learn practical AI tools,
-                    prompting and creative workflows.
-                </p>
-
-                <div class="course-price">
-                    Rs. 1,000+
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- WHY US -->
-
-<section class="section" id="why">
-
-    <div class="section-title">
-        <h2>⚡ <span>Why</span> CyberJaniya?</h2>
-    </div>
-
-    <div class="features">
-
-        <div class="feature">
-            <div class="feature-icon">🎨</div>
-            <h3>Creative Designs</h3>
-            <p>Modern and professional designs.</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">⚡</div>
-            <h3>Fast Delivery</h3>
-            <p>Quick communication and delivery.</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">💰</div>
-            <h3>Affordable Prices</h3>
-            <p>Services starting from affordable prices.</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">📱</div>
-            <h3>Mobile Friendly</h3>
-            <p>Everything designed for modern devices.</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="section" id="contact">
-
-    <div class="gemini">
-
-        <div>
-
-            <h2>🚀 Start Your Project</h2>
-
-            <p>
-                Need a logo, website, app design, poster,
-                video edit or AI service?
-                Contact CyberJaniya today.
-            </p>
-
-        </div>
-
-        <a class="btn btn-primary"
-           href="https://wa.me/94782539133?text=Hello%20CyberJaniya%2C%20I%20want%20to%20start%20a%20project">
-           Contact Us →
-        </a>
-
-    </div>
-
+</div>
 </section>
 
 </main>
 
 
+<!-- RIGHT PANEL -->
+
+<aside class="rightbar">
+
+<div class="panel">
+
+<div class="profile">
+<div class="avatar">CJ</div>
+<div>
+<strong>CyberExplorer</strong>
+<p style="color:#718d9e;font-size:12px">Learning Member</p>
+</div>
+</div>
+
+<div class="progress"><div></div></div>
+<div style="font-size:11px;color:#7894a5">Course Progress — 64%</div>
+
+<div class="stat">
+<span>Courses Started</span>
+<strong>3</strong>
+</div>
+
+<div class="stat">
+<span>Lessons Completed</span>
+<strong>18</strong>
+</div>
+
+</div>
+
+
+<div class="panel">
+
+<h3>🔥 Today's Challenge</h3>
+
+<p style="color:#8ca5b5;font-size:13px;line-height:1.6;margin-top:10px">
+Build a simple responsive webpage using HTML & CSS.
+</p>
+
+<button style="
+width:100%;
+margin-top:15px;
+padding:11px;
+border:0;
+border-radius:9px;
+background:linear-gradient(135deg,#078eff,#663dff);
+color:#fff;
+font-weight:700">
+Start Challenge →
+</button>
+
+</div>
+
+
+<div class="panel">
+
+<h3>📚 Popular Courses</h3>
+
+<div class="stat"><span>🌐 Web Design</span><strong>FREE</strong></div>
+<div class="stat"><span>💻 Coding</span><strong>FREE</strong></div>
+<div class="stat"><span>🤖 AI Basics</span><strong>FREE</strong></div>
+<div class="stat"><span>🛡 Cyber Safety</span><strong>FREE</strong></div>
+
+</div>
+
+</aside>
+
+</div>
+
+
 <footer>
-
-    <div class="footer-inner">
-
-        <div>
-            <h2>CYBERJANIYA OFFICIAL</h2>
-            <p>
-                Creative Digital Solutions • Sri Lanka
-            </p>
-            <p>
-                © 2026 CyberJaniya. All Rights Reserved.
-            </p>
-        </div>
-
-        <div class="socials">
-            <a href="#">YouTube</a>
-            <a href="#">WhatsApp</a>
-            <a href="#">Telegram</a>
-            <a href="#">Facebook</a>
-        </div>
-
-    </div>
-
+  <strong>CYBERJANIYA OFFICIAL</strong>
+  <br><br>
+  Learn • Create • Explore
+  <br><br>
+  © 2026 CyberJaniya Official
 </footer>
 
 
 <a class="whatsapp"
-   href="https://wa.me/94782539133?text=Hello%20CyberJaniya%20%F0%9F%91%8B">
-   💬 WhatsApp
+href="https://wa.me/94782539133"
+target="_blank">
+💬 WhatsApp
 </a>
+
+
+<!-- COURSE MODAL -->
+
+<div class="modal" id="courseModal">
+
+<div class="modal-box">
+
+<div class="modal-head" id="modalHead">
+
+<button class="close" onclick="closeCourse()">×</button>
+
+<div class="modal-head-content">
+<span class="badge" id="modalBadge">FREE COURSE</span>
+<h1 id="modalTitle"></h1>
+<p id="modalSubtitle"></p>
+</div>
+
+</div>
+
+<div class="modal-content">
+
+<div id="lessonArea"></div>
+
+<div class="lesson-actions">
+<button onclick="previousLesson()">← Previous</button>
+<button class="next" onclick="nextLesson()">Next Lesson →</button>
+</div>
+
+</div>
+
+</div>
+</div>
 
 
 <script>
 
-function toggleMenu(){
+const courses=[
 
-    document.getElementById("nav")
-    .classList.toggle("show");
+{
+title:"🌐 Web Design A–Z",
+subtitle:"Learn how modern websites are built — step by step.",
+badge:"WEB DESIGN",
+image:"https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — What is Web Design?",
+image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🌐 What is Web Design?</h2>
+
+<p>
+Web design is the process of planning and creating the visual
+appearance and user experience of a website.
+</p>
+
+<h3>Simple idea</h3>
+
+<p>
+Think of a website like a house:
+</p>
+
+<ul>
+<li>HTML = Structure 🏠</li>
+<li>CSS = Design 🎨</li>
+<li>JavaScript = Interaction ⚡</li>
+</ul>
+
+<p>
+These three technologies work together to create modern websites.
+</p>
+`
+},
+
+{
+title:"Lesson 02 — Your First HTML",
+image:"https://images.unsplash.com/photo-1621839673705-6617adf9e890?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>💻 Your First HTML Page</h2>
+
+<p>
+HTML gives your website its structure.
+</p>
+
+<div class="code">
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;h1&gt;Hello CyberJaniya&lt;/h1&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;My first website&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</div>
+
+<h3>What happened?</h3>
+
+<p>
+The h1 creates a large heading and the p element creates
+a paragraph.
+</p>
+`
+},
+
+{
+title:"Lesson 03 — CSS Design",
+image:"https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🎨 CSS</h2>
+
+<p>
+CSS controls colors, spacing, fonts, borders, layouts and
+animations.
+</p>
+
+<div class="code">
+body{<br>
+&nbsp;&nbsp;background:#020914;<br>
+&nbsp;&nbsp;color:white;<br>
+}<br><br>
+
+h1{<br>
+&nbsp;&nbsp;color:#00d9ff;<br>
+}
+</div>
+`
+}
+
+]
+
+},
+
+
+{
+title:"📱 App Design",
+subtitle:"Understand UI/UX and create better mobile app interfaces.",
+badge:"APP DESIGN",
+image:"https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — What is UI/UX?",
+image:"https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>📱 UI & UX</h2>
+<p>
+UI means User Interface — what the user sees and interacts with.
+</p>
+<p>
+UX means User Experience — how easy and enjoyable the product
+is to use.
+</p>
+
+<h3>Good UI</h3>
+<ul>
+<li>Clear buttons</li>
+<li>Readable text</li>
+<li>Good spacing</li>
+<li>Consistent colors</li>
+</ul>
+`
+},
+
+{
+title:"Lesson 02 — Mobile Screen Layout",
+image:"https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>📐 Designing a Screen</h2>
+
+<p>
+Start with the most important information first.
+Then arrange buttons and content so users know what to do.
+</p>
+
+<h3>Basic structure</h3>
+
+<ul>
+<li>Header</li>
+<li>Main content</li>
+<li>Primary action</li>
+<li>Navigation</li>
+</ul>
+`
+}
+
+]
+
+},
+
+
+{
+title:"🕶 Dark Web Basics",
+subtitle:"Understand the concept, privacy and safety — responsibly.",
+badge:"CYBER SAFETY",
+image:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — What is the Dark Web?",
+image:"https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🕶 Dark Web Explained</h2>
+
+<p>
+The dark web is a part of the internet that isn't normally
+indexed by standard search engines.
+</p>
+
+<p>
+It is often associated with privacy technologies and
+special networks.
+</p>
+
+<h3>Important ⚠️</h3>
+
+<p>
+Not everything on the dark web is illegal, but it can contain
+dangerous and illegal material. Never access suspicious
+services or participate in illegal activity.
+</p>
+`
+},
+
+{
+title:"Lesson 02 — Online Privacy",
+image:"https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🔐 Privacy Basics</h2>
+
+<p>
+Protecting your identity online starts with simple habits.
+</p>
+
+<ul>
+<li>Use strong unique passwords</li>
+<li>Enable 2FA</li>
+<li>Avoid suspicious links</li>
+<li>Keep software updated</li>
+<li>Never share private credentials</li>
+</ul>
+`
+}
+
+]
+
+},
+
+
+{
+title:"💻 Coding Basics",
+subtitle:"Start programming from zero with simple practical lessons.",
+badge:"CODING",
+image:"https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — What is Coding?",
+image:"https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>💻 Coding</h2>
+
+<p>
+Coding means writing instructions that computers can understand.
+</p>
+
+<h3>Popular languages</h3>
+
+<ul>
+<li>HTML / CSS</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>Java</li>
+<li>C++</li>
+</ul>
+`
+},
+
+{
+title:"Lesson 02 — Variables",
+image:"https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>📦 Variables</h2>
+
+<p>
+A variable stores information that your program can use.
+</p>
+
+<div class="code">
+let name = "CyberJaniya";<br>
+let age = 18;<br><br>
+console.log(name);
+</div>
+
+<p>
+Here the variable <b>name</b> contains text and
+<b>age</b> contains a number.
+</p>
+`
+}
+
+]
+
+},
+
+
+{
+title:"🤖 AI Master Basics",
+subtitle:"Learn AI concepts, prompting and practical AI workflows.",
+badge:"ARTIFICIAL INTELLIGENCE",
+image:"https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — What is AI?",
+image:"https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🤖 Artificial Intelligence</h2>
+
+<p>
+AI is technology that allows computers to perform tasks
+that normally require human-like intelligence.
+</p>
+
+<h3>Examples</h3>
+
+<ul>
+<li>Image generation</li>
+<li>Text generation</li>
+<li>Voice assistants</li>
+<li>Recommendation systems</li>
+<li>Computer vision</li>
+</ul>
+`
+},
+
+{
+title:"Lesson 02 — Better Prompts",
+image:"https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🧠 Prompting</h2>
+
+<p>
+A prompt is the instruction you give an AI system.
+</p>
+
+<h3>Simple formula</h3>
+
+<div class="code">
+Role + Task + Context + Requirements + Output Format
+</div>
+
+<p>
+The clearer your instruction is, the easier it is for an AI
+system to understand what you want.
+</p>
+`
+}
+
+]
+
+},
+
+
+{
+title:"🛡 Cyber Safety",
+subtitle:"Protect your accounts, devices and personal information.",
+badge:"SECURITY",
+image:"https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — Protect Your Account",
+image:"https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🛡 Account Security</h2>
+
+<ul>
+<li>Use a unique password</li>
+<li>Enable two-factor authentication</li>
+<li>Check login alerts</li>
+<li>Don't share verification codes</li>
+<li>Review connected devices</li>
+</ul>
+
+<h3>Remember</h3>
+<p>
+A legitimate service will not ask you to send your password
+or one-time verification code to another person.
+</p>
+`
+},
+
+{
+title:"Lesson 02 — Spot a Phishing Message",
+image:"https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🎣 Phishing</h2>
+
+<p>
+Phishing is an attempt to trick someone into giving away
+sensitive information or clicking a malicious link.
+</p>
+
+<h3>Warning signs</h3>
+
+<ul>
+<li>Urgent threats</li>
+<li>Unknown sender</li>
+<li>Suspicious links</li>
+<li>Requests for passwords</li>
+<li>Fake prizes or offers</li>
+</ul>
+`
+}
+
+]
+
+},
+
+
+{
+title:"🎨 Logo & Graphic Design",
+subtitle:"Learn the fundamentals behind professional visual design.",
+badge:"DESIGN",
+image:"https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — Logo Basics",
+image:"https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🎨 What Makes a Good Logo?</h2>
+
+<p>
+A strong logo should be simple, memorable and suitable
+for the brand it represents.
+</p>
+
+<h3>Remember</h3>
+
+<ul>
+<li>Keep it recognizable</li>
+<li>Use suitable typography</li>
+<li>Don't overload it with details</li>
+<li>Make sure it works at small sizes</li>
+</ul>
+`
+},
+
+{
+title:"Lesson 02 — Colors",
+image:"https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🌈 Color Psychology</h2>
+
+<p>
+Colors can influence how people perceive a brand.
+</p>
+
+<ul>
+<li>Blue → Trust / Technology</li>
+<li>Red → Energy / Power</li>
+<li>Green → Growth / Nature</li>
+<li>Purple → Creativity / Premium</li>
+<li>Black → Luxury / Strength</li>
+</ul>
+`
+}
+
+]
+
+},
+
+
+{
+title:"📲 Build Websites From Phone",
+subtitle:"Learn how to create and publish websites using only your phone.",
+badge:"PHONE BUILDING",
+image:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=1400&q=80",
+
+lessons:[
+
+{
+title:"Lesson 01 — Create Your HTML File",
+image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>📲 Build From Your Phone</h2>
+
+<p>
+You don't need an expensive PC to start learning web development.
+A phone and a browser-based coding environment can be enough
+for beginner projects.
+</p>
+
+<h3>First step</h3>
+
+<p>
+Create a file called:
+</p>
+
+<div class="code">
+index.html
+</div>
+
+<p>
+Then add your HTML structure and preview it in your browser.
+</p>
+`
+},
+
+{
+title:"Lesson 02 — GitHub Pages",
+image:"https://images.unsplash.com/photo-1556075798-4825dfaaf498?auto=format&fit=crop&w=1200&q=80",
+text:`
+<h2>🚀 Publish Your Website</h2>
+
+<p>
+GitHub Pages can host static websites directly from a repository.
+</p>
+
+<h3>Basic flow</h3>
+
+<ul>
+<li>Create a GitHub repository</li>
+<li>Add your index.html</li>
+<li>Open repository Settings</li>
+<li>Open Pages</li>
+<li>Select your publishing branch</li>
+<li>Open your generated website URL</li>
+</ul>
+
+<p>
+Now your website can be viewed online.
+</p>
+`
+}
+
+]
 
 }
 
-
-/* ACTIVE NAV */
-
-const links=document.querySelectorAll("nav a");
-
-links.forEach(link=>{
-
-    link.addEventListener("click",()=>{
-
-        links.forEach(x=>x.classList.remove("active"));
-
-        link.classList.add("active");
-
-        document.getElementById("nav")
-        .classList.remove("show");
-
-    });
-
-});
+];
 
 
-/* SIMPLE SEARCH */
+let currentCourse=0;
+let currentLesson=0;
 
-document.querySelector(".search")
-.addEventListener("keyup",function(){
+function openCourse(index){
 
-    let value=this.value.toLowerCase();
+currentCourse=index;
+currentLesson=0;
 
-    document.querySelectorAll(".card,.course")
-    .forEach(card=>{
+const course=courses[index];
 
-        card.style.display=
-        card.innerText.toLowerCase().includes(value)
-        ? ""
-        : "none";
+document.getElementById("modalTitle").textContent=course.title;
+document.getElementById("modalSubtitle").textContent=course.subtitle;
+document.getElementById("modalBadge").textContent=course.badge;
 
-    });
+document.getElementById("modalHead").style.backgroundImage=
+`url("${course.image}")`;
 
-});
+renderLesson();
+
+document.getElementById("courseModal").style.display="block";
+document.body.style.overflow="hidden";
+
+}
+
+function renderLesson(){
+
+const lesson=courses[currentCourse].lessons[currentLesson];
+
+document.getElementById("lessonArea").innerHTML=`
+
+<h2>${lesson.title}</h2>
+
+<img class="lesson-image"
+src="${lesson.image}"
+alt="Course lesson">
+
+<div class="lesson-text">
+${lesson.text}
+</div>
+
+<div style="
+margin-top:20px;
+padding:12px;
+border-radius:10px;
+background:#071c2b;
+color:#72a1b8;
+font-size:12px;
+">
+Lesson ${currentLesson+1} of ${courses[currentCourse].lessons.length}
+</div>
+`;
+
+}
+
+function nextLesson(){
+
+const course=courses[currentCourse];
+
+if(currentLesson < course.lessons.length-1){
+
+currentLesson++;
+renderLesson();
+
+}else{
+
+alert("🎉 Course section completed! More lessons coming soon.");
+
+}
+
+}
+
+function previousLesson(){
+
+if(currentLesson>0){
+
+currentLesson--;
+renderLesson();
+
+}
+
+}
+
+function closeCourse(){
+
+document.getElementById("courseModal").style.display="none";
+document.body.style.overflow="auto";
+
+}
+
+function toggleMenu(){
+
+const nav=document.getElementById("mobileNav");
+
+nav.style.display=
+nav.style.display==="block" ? "none" : "block";
+
+}
+
+window.onclick=function(e){
+
+const modal=document.getElementById("courseModal");
+
+if(e.target===modal){
+closeCourse();
+}
+
+}
 
 </script>
 
